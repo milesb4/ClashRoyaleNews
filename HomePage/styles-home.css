@@ -1,0 +1,113 @@
+/* styles.css */
+
+body {
+    margin: 0; /* Remove default body margin */
+}
+
+.container {
+    display: flex; /* Enables flexbox layout */
+    justify-content: center; /* Centers the content horizontally */
+    align-items: flex-start; /* Aligns items to the top */
+    max-width: 1200px; /* Limit the overall width of your content and sidebars */
+    margin: 0 auto; /* Center the container on the page */
+    padding: 20px 0; /* Add some vertical padding */
+}
+
+.left-sidebar, .right-sidebar {
+    width: 200px; /* Adjust sidebar width as needed */
+    padding: 10px;
+    background-color: #f0f0f0; /* Light background for sidebars */
+    margin: 0 15px; /* Space between sidebar and main content */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.main-content {
+    flex-grow: 1; /* Allows main content to take up remaining space */
+    max-width: 800px; /* Limit the width of your main content */
+    padding: 20px;
+    background-color: white; /* Background for your main content */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.image-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%; /* Ensure the image is responsive within its container */
+    height: auto;
+}
+
+.ad-unit {
+    margin-bottom: 20px; /* Space between ad units */
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.ad-unit img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Remove extra space below image */
+    margin: 10px auto 0; /* Center image with some top margin */
+}
+
+/* Styles for the new button */
+.button-container {
+    text-align: center; /* Center the button */
+    margin-top: 30px; /* Space above the button */
+    margin-bottom: 20px; /* Space below the button */
+}
+
+.balance-button {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    padding: 15px 30px; /* Padding inside the button */
+    border: none; /* No border */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 20px; /* Larger font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    width: 80%; /* Make the button wide */
+    max-width: 400px; /* Limit max width for larger screens */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.balance-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+
+.page-footer {
+    margin-top: 50px; /* Adjust this value as needed to place the footer below content */
+    background-color: black;
+    padding: 20px;
+}
+
+.page-footer p {
+    text-align: center;
+    color: white;
+    font-size: 17px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: center; /* Center items when stacked */
+    }
+
+    .left-sidebar, .right-sidebar, .main-content {
+        width: 90%; /* Make them full width (or nearly full) */
+        margin: 15px 0; /* Add vertical margin */
+    }
+
+    .balance-button {
+        width: 90%; /* Adjust button width for smaller screens */
+        padding: 12px 20px; /* Adjust padding for smaller screens */
+        font-size: 18px; /* Adjust font size for smaller screens */
+    }
+}

@@ -1,0 +1,107 @@
+/* 772025styles.css */
+
+body {
+    margin: 0; /* Remove default body margin */
+    font-family: sans-serif; /* A good default font */
+    position: relative; /* Crucial for absolute positioning of the button-logo */
+}
+
+.container {
+    display: flex; /* Enables flexbox layout */
+    justify-content: center; /* Centers the content horizontally */
+    align-items: flex-start; /* Aligns items to the top */
+    max-width: 1200px; /* Limit the overall width of your content and sidebars */
+    margin: 0 auto; /* Center the container on the page */
+    padding: 20px 0; /* Add some vertical padding */
+}
+
+.left-sidebar, .right-sidebar {
+    width: 200px; /* Adjust sidebar width as needed for your ad sizes (e.g., 160px, 300px) */
+    padding: 10px;
+    background-color: #f8f8f8; /* Slightly different background for these sidebars */
+    margin: 0 15px; /* Space between sidebar and main content */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+    position: sticky; /* Makes the element sticky */
+    top: 20px; /* Distance from the top of the viewport when it becomes sticky */
+    align-self: flex-start; /* Ensures sticky works correctly within a flex container */
+    height: fit-content; /* Ensures the sidebar only takes up as much height as its content */
+    max-height: calc(100vh - 40px); /* Adjust based on 'top' value and any footer */
+    overflow-y: auto; /* Adds scrollbar if content exceeds max-height */
+}
+
+.main-content {
+    flex-grow: 1; /* Allows main content to take up remaining space */
+    max-width: 800px; /* Limit the width of your main content */
+    padding: 20px;
+    background-color: white; /* Background for your main content */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.image-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%; /* Ensure images are responsive within their container */
+    height: auto;
+}
+
+.ad-unit {
+    margin-bottom: 20px; /* Space between ad units if you have multiple */
+    border: 1px solid #eee; /* Subtle border for ad units */
+    padding: 5px; /* Some padding inside the ad unit container */
+    text-align: center; /* Center the ad content (often not necessary for actual AdSense ads) */
+    background-color: #fff; /* White background for the ad unit area */
+    border-radius: 3px;
+}
+
+.home-button-logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    display: block;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.home-button-logo img {
+    width: 100px; /* Increased from 60px to 100px - Adjust this value */
+    height: auto; /* Maintain aspect ratio */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease;
+}
+
+.home-button-logo img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-sidebar, .right-sidebar, .main-content {
+        position: static;
+        top: auto;
+        align-self: auto;
+        width: 90%;
+        margin: 15px 0;
+        max-height: none;
+        overflow-y: visible;
+    }
+
+    .home-button-logo {
+        top: 5px;
+        left: 5px;
+    }
+    .home-button-logo img {
+        width: 60px; /* Increased from 45px to 70px for smaller screens */
+    }
+}
